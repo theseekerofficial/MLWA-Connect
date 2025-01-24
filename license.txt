@@ -1,0 +1,71 @@
+MIT LICENSE
+
+Copyright (c) 2025 The Seeker's Cave
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to use, copy, modify, merge, publish, and distribute the Software, subject to the following conditions:
+
+1. ATTRIBUTION:
+   - The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+   - Any use of this Software in external projects, publications, or derivative works must include clear attribution to the creator, "The Seeker," along with the following credit line:
+     Created by The Seeker. Telegram: https://t.me/MrUnknown114
+   - FAILURE TO PROVIDE PROPER ATTRIBUTION IS STRICTLY PROHIBITED.
+
+2. NON-COMMERCIAL USE:
+   - This Software is provided FREE OF CHARGE and is intended solely for PERSONAL AND EDUCATIONAL USE.
+   - The resale, sublicensing, or use of this Software for any COMMERCIAL PURPOSES OR PROFIT-MAKING ACTIVITIES IS STRICTLY PROHIBITED.
+
+3. PROHIBITED USES:
+   - The Software must NOT be used in ways that harm, disrupt, or interfere with the MLWA Network (accessible at https://mlwa.xyz) or its associated services.
+   - UNAUTHORIZED, MALICIOUS, OR ILLEGAL USE of the Software is STRICTLY PROHIBITED.
+
+4. NO RESPONSIBILITY FOR MODIFICATIONS:
+   - The original authors and contributors are NOT RESPONSIBLE for any harm, damage, or issues arising from modifications, alterations, or derivative works based on this Software. Any such modifications are made at the Licensee’s sole discretion and risk.
+
+5. NO WARRANTY:
+   - THE SOFTWARE IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT.
+   - IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+6. TERMINATION OF RIGHTS:
+   - The Licensor reserves the right to REVOKE PERMISSIONS GRANTED under this license if the Licensee violates the terms, including but not limited to:
+     - Failing to provide attribution.
+     - Engaging in resale or commercial use.
+     - Using the Software for unauthorized purposes.
+
+
+7. Intellectual Property Protection
+All intellectual property rights, including but not limited to copyrights, trademarks, and patents associated with this Software, remain the sole property of The Seeker. Unauthorized use of these rights is strictly prohibited.
+
+
+8. Data Privacy and Usage
+This Software does not collect or store user data without explicit consent. Any data collected will comply with applicable data protection laws. By using this Software, the user agrees to the terms outlined in the privacy policy.
+
+9. Security Assurance and Limitations
+While efforts have been made to ensure the security of this Software, no guarantees are made regarding the protection of data or systems against unauthorized access, malware, or other threats. Users are responsible for implementing additional security measures as necessary.
+
+
+10. Updates and Patches
+The Licensor reserves the right to release updates or patches to improve functionality or address security vulnerabilities. Users are encouraged to install updates to ensure continued access and protection.
+
+
+11. Third-Party Components
+This Software may include third-party libraries or dependencies. These components are licensed under their respective licenses, which are included with the Software. The user agrees to comply with all applicable third-party license terms.
+
+
+12. Termination for Breach
+In the event of a breach of this Agreement, the Licensor reserves the right to immediately terminate the user's rights to use this Software. Upon termination, the user must delete all copies of the Software in their possession.
+
+
+13. Limitation of Liability
+Under no circumstances shall the Licensor be liable for any indirect, incidental, consequential, or punitive damages arising from the use of or inability to use the Software, even if advised of the possibility of such damages.
+
+
+14. License Transfer
+This license is personal to the user and is non-transferable without prior written consent from the Licensor.
+
+
+By installing or using the Software, you agree to be bound by these terms. If you do not agree, do not install or use the Software.
+
+REMEMBER TO GIVE CREDIT WHERE IT’S DUE:
+- CREATOR: "The Seeker"
+- TELEGRAM CONTACT: https://t.me/MrUnknown114
+- APP NAME: "MLWA Connect"

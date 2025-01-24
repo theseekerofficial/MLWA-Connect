@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MLWA Connect: Changelog</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1a002e, #2a0047, #3f0065);
+            color: #f0f0f0;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            user-select: none;
+        }
+
+        .frame-bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: rgba(10, 10, 10, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 15px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .frame-bar .title {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+            cursor: default;
+        }
+
+        .frame-bar .controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-right: 25px;
+        }
+
+        .control-button {
+            width: 35px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.2s ease;
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .control-button:hover {
+            background: rgba(255, 255, 255, 0.35);
+            transform: scale(1.1);
+        }
+
+        .changelog-container {
+            width: 90%;
+            max-width: 850px;
+            height: 80%;
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 15px;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        .changelog-header {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffbbff;
+        }
+
+        .changelog-content {
+            flex: 1;
+            overflow-y: auto;
+            padding-right: 10px;
+            scrollbar-width: thin;
+            scrollbar-color: #480079 transparent;
+        }
+
+        .changelog-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .changelog-content::-webkit-scrollbar-thumb {
+            background: #480079;
+            border-radius: 10px;
+        }
+
+        .changelog-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .version-block {
+            margin-bottom: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .version {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #e0b3ff;
+            margin-bottom: 5px;
+        }
+
+        .date {
+            font-size: 1rem;
+            color: #d6afff;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+            font-size: 1rem;
+            color: #e4e4ff;
+        }
+
+        #minimize i {
+            color: #ffc107;
+        }
+
+        #minimize i:hover {
+            color: #ffeb3b;
+        }
+
+        #close i {
+            color: #f44336;
+        }
+
+        #close i:hover {
+            color: #ff7961;
+        }
+    </style>
+</head>
+<body>
+<div class="frame-bar">
+    <div class="title">MLWA Connect: Changelog</div>
+    <div class="controls">
+        <div id="minimize" class="control-button">
+            <i class="fas fa-window-minimize" style="margin-bottom: 10px;"></i>
+        </div>
+        <div id="close" class="control-button">
+            <i class="fas fa-times" style="margin-bottom: -3px;"></i>
+        </div>
+    </div>
+</div>
+<div class="changelog-container">
+    <div class="changelog-header">Changelog</div>
+    <div class="changelog-content"></div>
+</div>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        const changelogContainer = document.querySelector('.changelog-content');
+        const minimizeButton = document.getElementById('minimize');
+        const closeButton = document.getElementById('close');
+
+        window.changelog.getChangelogData((releaseNotes) => {
+            if (releaseNotes && releaseNotes.length > 0) {
+                releaseNotes.forEach(note => {
+                    const versionBlock = document.createElement('div');
+                    versionBlock.classList.add('version-block');
+
+                    versionBlock.innerHTML = `
+                        <div class="version">Version ${note.version}</div>
+                        <div class="date">Release Date: ${note.date}</div>
+                        <ul>
+                            ${note.notes.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    `;
+
+                    changelogContainer.appendChild(versionBlock);
+                });
+            } else {
+                changelogContainer.innerHTML = '<p>No changelog available.</p>';
+            }
+        });
+
+        minimizeButton.addEventListener('click', () => {
+            window.electronAPI.minimizeWindow();
+        });
+
+        closeButton.addEventListener('click', () => {
+            window.electronAPI.closeWindow();
+        });
+    });
+</script>
+</body>
+</html>

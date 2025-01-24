@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loading...</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: transparent;
+            font-family: 'Courier New', Courier, monospace;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .glass-container-holder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            max-width: 400px;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(135deg, rgba(10, 10, 30, 0.9), rgba(0, 0, 40, 0.8));
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .glass-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.01);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        .loader {
+            width: 100px;
+            height: 100px;
+            background-color: #ff3d00;
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 30px 4px rgba(0, 0, 0, 0.5) inset,
+            0 5px 12px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+            margin-bottom: 10%;
+        }
+        .loader:before,
+        .loader:after {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 45%;
+            top: -40%;
+            background-color: #fff;
+            animation: wave 5s linear infinite;
+        }
+        .loader:before {
+            border-radius: 30%;
+            background: rgba(255, 255, 255, 0.4);
+            animation: wave 5s linear infinite;
+        }
+        @keyframes wave {
+            0% {
+                transform: rotate(0);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .text {
+            margin-top: 1rem;
+            text-align: center;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.15rem;
+            text-transform: uppercase;
+            color: #00e6e6;
+            opacity: 0;
+            animation: fadeInOut 1.8s ease-in-out infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .expand-wave {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(139, 0, 0, 0.8), rgba(128, 0, 128, 0.2));
+            animation: expandWaveEffect 3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+            pointer-events: none;
+        }
+
+        @keyframes expandWaveEffect {
+            0% {
+                width: 100px;
+                height: 100px;
+                opacity: 1;
+            }
+            50% {
+                width: 150%;
+                height: 150%;
+                opacity: 0.7;
+            }
+            100% {
+                width: 250%;
+                height: 250%;
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="glass-container-holder">
+    <div class="glass-container">
+        <span class="loader"></span>
+        <div class="text">Connecting to Servers</div>
+    </div>
+</div>
+</body>
+</html>

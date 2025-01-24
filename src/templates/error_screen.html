@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: transparent;
+            color: white;
+            font-family: 'Inter', Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .container {
+            max-width: 420px;
+            padding: 30px;
+            border-radius: 20px;
+            background: rgba(9, 3, 65, 0.98);
+            backdrop-filter: blur(25px) saturate(150%);
+            -webkit-backdrop-filter: blur(25px) saturate(150%);
+            animation: fadeIn 1s ease-out;
+            animation-fill-mode: forwards;
+        }
+
+        .title {
+            font-size: 25px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: #ff6384;
+            text-shadow: 0 3px 8px rgba(255, 99, 132, 0.8);
+        }
+
+        .message {
+            font-size: 15px;
+            margin-bottom: 25px;
+            line-height: 1.5;
+            color: #f1f1f1;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #ff0077, #7700ff);
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+            box-shadow: 0 4px 12px rgba(255, 0, 119, 0.5);
+            margin: 10px;
+        }
+
+        .button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(255, 0, 119, 0.7);
+            background: linear-gradient(135deg, #7700ff, #ff0077);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            animation: fadeIn 1s ease;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="title" id="title">Something Went Wrong</div>
+    <div class="message" id="message">An unexpected error occurred. Please try again later.</div>
+    <a href="#" class="button" id="closeButton">Okay</a>
+    <a href="#" class="button" id="support-button" style="display: none;">Support</a>
+</div>
+<script>
+    const { ipcRenderer } = require('electron');
+    const { shell } = require('electron');
+
+    document.getElementById('closeButton').addEventListener('click', () => {
+        ipcRenderer.send('close-error-window');
+    });
+
+    const supportButton2 = document.getElementById('support-button');
+    supportButton2.addEventListener('click', (event) => {
+        event.preventDefault();
+        shell.openExternal(supportButton2.href);
+    });
+</script>
+</body>
+</html>

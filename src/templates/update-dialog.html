@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Available</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
+        .dialog {
+            background: linear-gradient(135deg, #1a002b, #3a003d);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6), inset 0 0 10px rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            color: #d1d1e0;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #ff77e6;
+        }
+
+        p {
+            margin: 10px 0;
+            font-size: 1rem;
+            color: #e0e0ff;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.3s;
+        }
+
+        button#update-button {
+            background: linear-gradient(135deg, #ff0077, #7700ff);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 0, 119, 0.5), inset 0 0 5px rgba(119, 0, 255, 0.5);
+        }
+
+        button#update-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 30px rgba(255, 0, 119, 0.8), inset 0 0 8px rgba(119, 0, 255, 0.8);
+        }
+
+        button#later-button {
+            background: rgba(255, 255, 255, 0.2);
+            color: #e0e0e0;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2), inset 0 0 5px rgba(255, 255, 255, 0.1);
+        }
+
+        button#later-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4), inset 0 0 8px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+<div class="dialog">
+    <h1>Update Available</h1>
+    <p>A new version <span id="update-version"></span> of MLWA Connect available.</p>
+    <p>Would you like to update now?</p>
+    <div class="button-container">
+        <button id="update-button">Update</button>
+        <button id="later-button">Later</button>
+    </div>
+</div>
+</body>
+</html>

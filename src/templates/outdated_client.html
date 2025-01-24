@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Outdated Client</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+            background: #420202;
+            background-size: 400% 400%;
+            animation: bg-animation 10s infinite;
+        }
+
+        @keyframes bg-animation {
+            0% { background-position: 0 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0 50%; }
+        }
+
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(15px);
+            background: rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
+            padding: 40px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3rem;
+            text-align: center;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        p {
+            color: #bdc3c7;
+            font-size: 1.2rem;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .glass-morph {
+            width: 300px;
+            height: 300px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(20px);
+            border-radius: 50%;
+            position: absolute;
+            animation: float 5s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        .glass-morph:nth-child(1) {
+            top: 10%;
+            left: 5%;
+        }
+
+        .glass-morph:nth-child(2) {
+            top: 15%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .glass-morph:nth-child(3) {
+            bottom: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .glass-morph:nth-child(4) {
+            bottom: 3%;
+            right: 20%;
+            animation-delay: 3s;
+        }
+
+        .glass-morph:nth-child(5) {
+            bottom: 65%;
+            left: 30%;
+            animation-delay: 5s;
+        }
+    </style>
+</head>
+<body>
+<div class="glass-morph"></div>
+<div class="glass-morph"></div>
+<div class="glass-morph"></div>
+<div class="glass-morph"></div>
+<div class="glass-morph"></div>
+<div class="container">
+    <h1>Outdated MLWA Connect Client</h1>
+    <p>Please update your client to the latest version to continue using MLWA Connect. Use Help > Check for updates or visit the releases page for the latest updates.</p>
+</div>
+</body>
+</html>

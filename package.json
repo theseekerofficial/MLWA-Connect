@@ -1,0 +1,91 @@
+{
+  "name": "mlwa-connect",
+  "version": "1.1.0",
+  "description": "MLWA Connect Desktop App",
+  "main": "src/index.js",
+  "author": "The Seeker's Cave",
+  "license": "Proprietary",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "build": {
+    "appId": "xyz.mlwa.connect",
+    "productName": "MLWA-Connect",
+    "publish": {
+      "provider": "github",
+      "owner": "theseekerofficial",
+      "repo": "MLWA-Connect"
+    },
+    "copyright": "© 2024–2025 The Seeker's Cave. All rights reserved.",
+    "files": [
+      "src/**/*",
+      "package.json",
+      "license.txt",
+      "assets/**/*"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "assets"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64",
+            "ia32"
+          ]
+        }
+      ],
+      "icon": "/assets/windows.ico",
+      "artifactName": "${productName}-${version}-${arch}.exe"
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "rpm"
+      ],
+      "icon": "/assets/linux.png",
+      "artifactName": "${productName}-${version}-${arch}.${ext}"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "MLWA Connect",
+      "include": "build/installer.nsh",
+      "runAfterFinish": true,
+      "warningsAsErrors": false
+    },
+    "extraFiles": [
+      {
+        "from": "src/change-log-data.json",
+        "to": "resources/change-log-data.json"
+      }
+    ],
+    "extraResources": [
+      {
+        "from": ".env",
+        "to": ".env"
+      },
+      {
+        "from": "assets",
+        "to": "assets"
+      }
+    ]
+  },
+  "devDependencies": {
+    "@electron/packager": "^18.3.6",
+    "electron": "^34.0.0",
+    "electron-builder": "^24.6.0"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "electron-updater": "^6.3.9",
+    "node-abort-controller": "^3.1.1",
+    "node-fetch": "^3.3.2"
+  }
+}
