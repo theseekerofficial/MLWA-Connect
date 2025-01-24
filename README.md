@@ -13,6 +13,9 @@
 **MLWA Connect** is an open-source desktop and mobile (yet to release) client for the **MLWA Network**. This tool eliminates the need for traditional browsers to use MLWA services by providing a direct connection, ensuring a seamless user experience.
 
 ---
+## Download the pre-build setup files from [release page](https://github.com/theseekerofficial/MLWA-Connect/releases)
+
+---
 
 ## ✨ Key Features
 
