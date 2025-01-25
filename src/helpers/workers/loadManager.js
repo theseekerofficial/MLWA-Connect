@@ -10,6 +10,7 @@ function showLoaderWindow(mainWindow) {
         parent: mainWindow,
         show: false,
         frame: false,
+        resizable: false,
         webPreferences: {
             contextIsolation: true,
             nodeIntegration: false,
