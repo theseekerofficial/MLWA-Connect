@@ -7,6 +7,27 @@ const createMenuTemplate = (mainWindow) => [
         label: 'MLWA',
         submenu: [
             {
+                label: 'Home',
+                click: (menuItem, browserWindow) => {
+                    if (browserWindow) {
+                        const currentURL = browserWindow.webContents.getURL();
+                        try {
+                            const { origin } = new URL(currentURL);
+                            const newURL = `${origin}/home`;
+                            browserWindow.loadURL(newURL)
+                                .then(() => {
+                                    console.log(`Navigated to Home page: ${newURL}`);
+                                })
+                                .catch(err => {
+                                    console.error(`Failed to navigate to ${newURL}:`, err);
+                                });
+                        } catch (error) {
+                            console.error('Failed to construct Home URL:', error);
+                        }
+                    }
+                }
+            },
+            {
                 label: 'Reload',
                 click: (menuItem, browserWindow) => {
                     if (browserWindow) browserWindow.reload();
